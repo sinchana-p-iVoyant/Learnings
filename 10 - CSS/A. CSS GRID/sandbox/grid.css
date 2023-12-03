@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background: #f5f5f5;
+}
+
+.container {
+    /* max-width: 960px;
+    margin: 100px auto;
+    padding: 10px; */
+
+    /* display: grid;
+    grid-template-columns: 100px 200px 300px;
+    grid-template-columns: 30% 40% 50%; */
+    /* grid-template-columns: 1fr 1fr;         mostly used as fraction */
+    /* grid-template-columns: 1fr 3fr 2fr;
+    grid-template-columns: repeat(3, 1fr);
+    
+    column-gap: 10px;
+    row-gap: 80px;
+
+    gap: 10px; */
+
+    /* grid-auto-rows: 200px; */
+    /* minimum height */
+    /* grid-auto-rows: minmax(200px, auto); */
+
+    /* 
+        grid-auto-rows: minmax(200px, auto) ensures that any implicitly created rows (those not explicitly sized) 
+        will have a minimum height of 200 pixels 
+        but can expand further if needed based on their content. 
+        It’s a flexible way to handle varying row "heights" in a CSS grid layout.
+    */
+
+    /* grid-template-rows: 200px 100px 200px;
+    grid-template-rows: repeat(3, 1fr);
+
+    align-items: stretch;
+    align-items: start;
+    align-items: center;
+    align-items: end; */
+
+    /* grid-template-columns: repeat(3, 100px);
+    justify-content: end;
+    justify-content: center;
+    justify-content: end; */
+    /* justify-content: space-between; */
+
+    /* ------------ */
+
+    max-width: 960px;
+    margin: 100px auto;
+    padding: 10px;
+
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    /* 
+        This keyword instructs the browser to automatically create as many columns as possible while maintaining the specified column size. 
+        It fills the available space with columns.
+
+
+        grid-template-columns: 
+        repeat(auto-fill, minmax(200px, 1fr)); 
+        creates a flexible grid where columns are automatically generated to fill the available space. 
+        Each column will be at least 200 pixels wide but can expand further if needed. 
+        It’s a powerful way to handle responsive layouts without media queries!
+    */
+
+    gap: 10px;
+
+
+}
+
+.item {
+    background: steelblue;
+    color: #fff;
+    font-size: 20px;
+    padding: 20px;
+    border: skyblue 1px solid;
+}
+
+/* using pseudo selectors */
+
+.item:nth-of-type(2) {
+    /* height: 100px;
+    width: 100px;
+
+    align-self: center;
+    justify-self: center; */
+}
+
+.item:nth-of-type(1) {
+    /* background: #000; */
+
+    /* spanning */
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+
+    /* grid-column: 1 / span 2; */
+
+    /* grid-column: 1 / 3; */
+}
+
+/* .item:nth-of-type(3) {
+    background: #333;
+    grid-row: 2 / 4;
+}
+
+.item:nth-of-type(4) {
+    background-color: #333;
+    grid-row: 2 / 4;    
+} */
+
+/* Responsiveness */
+
+@media(max-width: 500px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
