@@ -1,0 +1,17 @@
+header {
+  color: #c76dbc;
+}
+footer {
+  color: #c76dbc;
+}
+button {
+  background-color: #c76dbc;
+}
+.fancier-border {
+  border: 7px dashed #da2f4c;
+  background-color: yellow;
+  border-radius: 5px;
+}
+p {
+  margin: 10px;
+}
